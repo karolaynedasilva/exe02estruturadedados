@@ -29,8 +29,9 @@ public class Main {
        pilhavetor.empilhar(4);
 
        System.out.println("------");
-
-        // OBSERVÇÃO AJUSTAR LÓGICA DO EMPILHAR 
+       System.out.println("Elementos da lista: " );
+       pilhavetor.mostrarElementos();
+       
 
     }
 }

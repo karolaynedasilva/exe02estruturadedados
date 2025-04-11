@@ -33,7 +33,7 @@ public class PilhaVetor {
         if (topo == -1) {
             System.out.println("A lista está vazia");
         }else{
-            for(int i =0; i<= topo; i++){
+            for(int i = topo; i>= 0; i--){
                 System.out.println(elementos[i] + " ");
             }
         }
@@ -64,6 +64,7 @@ public class PilhaVetor {
         elementos[topo] = elemento;
 
         System.out.println("Elemento empilhado: " + elemento);
-        System.out.println("Novo topo: " + topo);
+        System.out.println("Novo topo (índice): " + topo);
+        
     }
 }
