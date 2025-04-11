@@ -77,4 +77,13 @@ public class PilhaVetor {
             throw new IllegalStateException("A Pilha está vazia");
         }
     }
+
+    public void verificarPilha(){
+        if (topo == -1) {
+            System.out.println("Sim! A Pilha está vazia");
+        }else{
+            System.out.println("Não! A Pilha possuí elementos!");
+        }
+        
+    }
 }

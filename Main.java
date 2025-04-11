@@ -18,9 +18,12 @@ public class Main {
         listavetor.adicionar(9);
         listavetor.adicionar(10);
 
+        System.out.println("A Pilha está vazia?");
+        pilhavetor.verificarPilha();
+
         System.out.println("-----");
-        System.out.println("Tamanho da lista: " + listavetor.getTamanho()); 
-        System.out.println("Elementos da lista: " );
+        System.out.println("Tamanho da pilha: " + listavetor.getTamanho()); 
+        System.out.println("Elementos da pilha: " );
         listavetor.mostrarElementos();
         System.out.println("-----");
 
@@ -30,19 +33,20 @@ public class Main {
        pilhavetor.empilhar(4);
 
        System.out.println("------");
-       System.out.println("Elementos da lista: " );
+       System.out.println("Elementos da pilha: " );
        pilhavetor.mostrarElementos();
        System.out.println("------");
        
-       System.out.println("Removendo elemento da lista");
+       System.out.println("Removendo elemento da pilha");
        elementoremovido = pilhavetor.desempilhar();
        pilhavetor.mostrarElementos();
 
-       System.out.println("Removendo elemento da lista");
+       System.out.println("Removendo elemento da pilha");
        elementoremovido = pilhavetor.desempilhar();
        pilhavetor.mostrarElementos();
 
-
+       System.out.println("A Pilha está vazia?");
+       pilhavetor.verificarPilha();
 
 
     }
