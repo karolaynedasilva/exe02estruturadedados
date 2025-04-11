@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ListaVetor listavetor = new ListaVetor();
         PilhaVetor pilhavetor = new PilhaVetor();
+        int elementoremovido;
 
         listavetor.adicionar(1);
         listavetor.adicionar(2);
@@ -31,7 +32,18 @@ public class Main {
        System.out.println("------");
        System.out.println("Elementos da lista: " );
        pilhavetor.mostrarElementos();
+       System.out.println("------");
        
+       System.out.println("Removendo elemento da lista");
+       elementoremovido = pilhavetor.desempilhar();
+       pilhavetor.mostrarElementos();
+
+       System.out.println("Removendo elemento da lista");
+       elementoremovido = pilhavetor.desempilhar();
+       pilhavetor.mostrarElementos();
+
+
+
 
     }
 }

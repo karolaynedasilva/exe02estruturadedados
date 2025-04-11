@@ -67,4 +67,14 @@ public class PilhaVetor {
         System.out.println("Novo topo (índice): " + topo);
         
     }
+
+    public int desempilhar(){
+        if (topo >= 0) {
+            int elemento = elementos[topo];
+            topo --;
+            return elemento;
+        }else{
+            throw new IllegalStateException("A Pilha está vazia");
+        }
+    }
 }
