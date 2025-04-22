@@ -1,15 +1,15 @@
 package estruturas;
 
 public class PilhaVetor {
-    private int[] elementos;
+    private Object[] elementos;
     private int topo;
     private int capacidade;
 
-    public int[] getElementos() {
+    public Object[] getElementos() {
         return elementos;
     }
 
-    public void setElementos(int[] elementos) {
+    public void setElementos(Object[] elementos) {
         this.elementos = elementos;
     }
 
@@ -39,15 +39,15 @@ public class PilhaVetor {
         }
     }
 
-    public PilhaVetor(){
-        this.capacidade =10;
-        this.elementos = new int[this.capacidade];
+    public PilhaVetor(int capacidade) {
+        this.capacidade = capacidade;
+        this.elementos = new Object[capacidade];
         this.topo = -1;
     }
 
     public void aumentarCapacidade(){
         int novaCapacidade = this.capacidade * (this.capacidade/2);
-        int[] novoVetor = new int[novaCapacidade];
+        Object[] novoVetor = new Object[novaCapacidade];
 
         for(int i =0; i<= topo; i++){
             novoVetor[i] = elementos[i];
@@ -56,34 +56,41 @@ public class PilhaVetor {
         this.capacidade = novaCapacidade;
     }
 
-    public void empilhar(int elemento){
+    public void empilhar(Object elementoAtual){
         if (topo >= capacidade -1) {
             aumentarCapacidade();
         }
         topo++;
-        elementos[topo] = elemento;
+        elementos[topo] = elementoAtual;
 
-        System.out.println("Elemento empilhado: " + elemento);
+        System.out.println("Elemento empilhado: " + elementoAtual);
         System.out.println("Novo topo (índice): " + topo);
         
     }
 
-    public int desempilhar(){
+    public String desempilhar() {
         if (topo >= 0) {
-            int elemento = elementos[topo];
-            topo --;
+            String elemento = (String) elementos[topo]; // cast necessário
+            topo--;
             return elemento;
-        }else{
+        } else {
             throw new IllegalStateException("A Pilha está vazia");
         }
     }
-
+    
     public void verificarPilha(){
         if (topo == -1) {
             System.out.println("Sim! A Pilha está vazia");
         }else{
             System.out.println("Não! A Pilha possuí elementos!");
         }
-        
+    }
+
+    public boolean estaVazia() {
+        return topo == -1;
+    }
+
+    public void limpar() {
+        topo = -1;
     }
 }

@@ -1,11 +1,14 @@
+import estruturas.EditorTexto;
 import estruturas.ListaVetor;
 import estruturas.PilhaVetor;
 
 public class Main {
     public static void main(String[] args) {
+
         ListaVetor listavetor = new ListaVetor();
-        PilhaVetor pilhavetor = new PilhaVetor();
-        int elementoremovido;
+        PilhaVetor pilhavetor = new PilhaVetor(10);
+        String elementoremovido;
+        EditorTexto editor = new EditorTexto(10);
 
         listavetor.adicionar(1);
         listavetor.adicionar(2);
@@ -27,10 +30,10 @@ public class Main {
         listavetor.mostrarElementos();
         System.out.println("-----");
 
-       pilhavetor.empilhar(1);
-       pilhavetor.empilhar(2);
-       pilhavetor.empilhar(3);
-       pilhavetor.empilhar(4);
+       pilhavetor.empilhar("a");
+       pilhavetor.empilhar("b");
+       pilhavetor.empilhar("c");
+       pilhavetor.empilhar("d");
 
        System.out.println("------");
        System.out.println("Elementos da pilha: " );
@@ -47,7 +50,21 @@ public class Main {
 
        System.out.println("A Pilha está vazia?");
        pilhavetor.verificarPilha();
+       System.out.println("------");
 
-
+       editor.inserirTexto("Olá");
+       System.out.println("------");
+       editor.inserirTexto("Olá, tudo bem?");
+       System.out.println("------");
+       editor.inserirTexto("Olá, tudo bem?");
+    
+       System.out.println("------");
+       editor.desfazer(); 
+       System.out.println("------");
+       editor.desfazer(); 
+       System.out.println("------");
+       editor.refazer(); 
+    
+       editor.mostrarTexto();
     }
 }
