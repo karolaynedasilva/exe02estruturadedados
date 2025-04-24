@@ -1,4 +1,6 @@
+import estruturas.Documento;
 import estruturas.EditorTexto;
+import estruturas.FilaImpressao;
 import estruturas.ListaVetor;
 import estruturas.PilhaVetor;
 
@@ -66,5 +68,20 @@ public class Main {
        editor.refazer(); 
     
        editor.mostrarTexto();
+
+
+       System.out.println("------FILA DE IMPRESSÃO -------");
+
+        FilaImpressao fila = new FilaImpressao(5);
+
+        fila.adicionarDocumento(new Documento("Artigo.pdf", 1500));
+        fila.adicionarDocumento(new Documento("Trabalho.docx", 800));
+
+        fila.mostrarFila();
+
+        fila.imprimirProximo();
+        fila.imprimirProximo();
+
+        fila.mostrarFila();
     }
 }
